@@ -2,12 +2,13 @@
 
 main() => runApp(PerguntaApp());
 
- class PerguntaApp extends StatelessWidget{
-
+ class PerguntaAppState extends State<PerguntaApp> {
    var perguntaSelecionada = 0;
 
    void responder(){
-     perguntaSelecionada++;
+     setState(() {
+       perguntaSelecionada++;
+     });
    }
 
    @override
@@ -46,5 +47,14 @@ main() => runApp(PerguntaApp());
        ),
      );
    }
+
+ }
+
+ class PerguntaApp extends StatefulWidget{
+
+  PerguntaAppState createState(){
+    return PerguntaAppState();
+   }
+
  }
 
